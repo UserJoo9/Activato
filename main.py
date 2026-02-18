@@ -6,7 +6,6 @@ import os, sys
 from threading import Thread
 import webbrowser
 
-
 working = False
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -84,13 +83,14 @@ class GUI(ctk.CTk):
 
     def __init__(self, fg_color = None, **kwargs):
         super().__init__(fg_color, **kwargs)
+        ctk.set_appearance_mode("dark")
         self.title("Free windows activation :)")
         self.iconbitmap(resource_path("favicon.ico"))
         self.resizable(0, 0)
         banner = Image.open(resource_path("banner.png"))
         ctk.CTkLabel(self, text="", image=ctk.CTkImage(dark_image=banner, light_image=banner, size=(400, 60))).pack()
         
-        dev = ctk.CTkButton(self, text="Devs > Discord", height=10, command=lambda: webbrowser.open_new_tab("https://discord.gg/ESjvFte4T7"))
+        dev = ctk.CTkButton(self, text="Discord", height=10, command=lambda: webbrowser.open_new_tab("https://beacons.ai/youssefalkhodary"))
         dev.pack(fill='x')
 
         self.checking_label = ctk.CTkLabel(self, text="Checking activation...", font=("roboto", 12, "bold"))

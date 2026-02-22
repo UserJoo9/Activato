@@ -1,0 +1,1 @@
+python -m nuitka --onefile --enable-plugin=tk-inter --windows-icon-from-ico=favicon.ico --windows-console-mode=disable --output-filename="Activato" --windows-uac-admin main.py

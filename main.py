@@ -28,9 +28,18 @@ def check_activation_powershell():
 
 license_dict = {
     "Education": "slmgr /ipk NW6C2-QMPVW-D7KKK-3GKT6-VCFB2",
+    "Education N": "slmgr /ipk 2WH4N-8QGBV-H22JP-CT43Q-MDWWJ",
     "Enterprise":  "slmgr /ipk NPPR9-FWDCX-D2C8J-H872K-2YT43",
+    "Enterprise N":  "slmgr /ipk DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4",
+    "Enterprise G":  "slmgr /ipk YYVX9-NTFWV-6MDM3-9PT4T-4M68B",
+    "Enterprise G N":  "slmgr /ipk 44RPN-FTY23-9VTTB-MP9BX-T84FV",
     "Home": "slmgr /ipk TX9XD-98N7V-6WMQ6-BX7FG-H8Q99",
     "Pro": "slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX",
+    "Pro N": "slmgr /ipk MH37W-N47XK-V7XM9-C7227-GCQG9",
+    "Pro for Workstations": "NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J",
+    "Pro for Workstations N": "9FNHH-K3HBT-3W4TD-6383H-6XYWF",
+    "Pro Education": "6TP4R-GNPTD-KYYHQ-7B7DP-J447Y",
+    "Pro Education N": "YVWGF-BXNMC-HTQYQ-CPQ99-66QFC",
 }
 cmd1 = "slmgr /skms kms8.msguides.com"
 cmd2 = "slmgr /ato"

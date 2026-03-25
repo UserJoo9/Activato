@@ -8,14 +8,19 @@ import webbrowser
 
 working = False
 def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
-    try:
-        # PyInstaller creates a temp folder and stores path in _MEIPASS
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath("")
+    if hasattr(sys, "frozen") or hasattr(sys, "real_path"):
+        base_path = os.path.dirname(sys.executable)
+    else:
+        base_path = os.path.dirname(os.path.abspath(__file__))
 
-    return os.path.join(base_path, relative_path)
+    path = os.path.join(base_path, relative_path)
+    
+    if not os.path.exists(path):
+        import ctypes
+        ctypes.windll.user32.MessageBoxW(0, f"File not found: {relative_path}", "Error", 0x10)
+        sys.exit(1)
+        
+    return path
 
 def check_activation_powershell():
     try:
